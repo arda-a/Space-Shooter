@@ -4,6 +4,10 @@
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
+Packages/
+MonoBleedingEdge/
+Logs/
+Space Shooter_Data/
 
 # Visual Studio cache directory
 .vs/
