@@ -14,10 +14,12 @@ public class Player : MonoBehaviour
     private float _firePeriod = 0.15f;
     private float _fireDelta = -1f;
 
+    [SerializeField]
+    private int _lives = 3;
+
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(0, 0, 0);
     }
 
     // Update is called once per frame
@@ -58,4 +60,13 @@ public class Player : MonoBehaviour
         Instantiate(_laserPrefab, transform.position + Vector3.up, Quaternion.identity);
     }
 
+    public void Damage()
+    {
+        _lives--;
+        if(_lives <= 0)
+        {
+            Destroy(this.gameObject);
+
+        }
+    }
 }
