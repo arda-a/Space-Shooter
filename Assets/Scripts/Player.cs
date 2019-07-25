@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,9 +18,12 @@ public class Player : MonoBehaviour
     [SerializeField]
     private int _lives = 3;
 
+    public static Action OnDeath;
+
     // Start is called before the first frame update
     void Start()
     {
+        
     }
 
     // Update is called once per frame
@@ -65,8 +69,8 @@ public class Player : MonoBehaviour
         _lives--;
         if(_lives <= 0)
         {
+            OnDeath?.Invoke();
             Destroy(this.gameObject);
-
         }
     }
 }
