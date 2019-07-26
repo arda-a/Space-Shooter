@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         Player player;
         Laser laser;
@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
             player.Damage();
             Destroy(this.gameObject);
         }
-        else if(other.transform.TryGetComponent(out laser))
+        else if (other.transform.TryGetComponent(out laser))
         {
             Destroy(other.gameObject);
             Destroy(this.gameObject);
