@@ -22,6 +22,10 @@ public class Laser : MonoBehaviour
         //destroy the laser when it is out of bounds
         if(transform.position.y >= 8f)
         {
+            if(transform.parent != null)
+            {
+                Destroy(transform.parent.gameObject);
+            }
             Destroy(this.gameObject);
         }
     }
